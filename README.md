@@ -59,4 +59,4 @@ python samilartgui.py
 
 ## Screenshot
 ![SamilaRT GUI](images/screenshot1.png)
-![SamilaRT GUI](images/screenshot1.png)
+![SamilaRT GUI](images/screenshot2.png)
