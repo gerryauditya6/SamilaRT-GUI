@@ -2,16 +2,15 @@
 
 This repository contains code for a graphical user interface (GUI) implementation of the SamilaRT project. SamilaRT is a generative image visualization tool that uses mathematical functions to create unique and visually interesting images.
 
-## Prerequisites
+### Prerequisites
 
-Before running the code, ensure that you have the following dependencies installed:
+- Python 3.7 or higher
+- pip (package installer for Python)
+- [requirements.txt](requirements.txt) file containing the list of dependencies
 
-- Kivy framework
-
-You can install the Kivy framework using the following command:
 
 ```
-pip install kivy
+pip install -r requirements.txt
 ```
 
 ## Getting Started
@@ -43,6 +42,12 @@ python samilartgui.py
 
 11. Repeat steps 6 to 10 to generate and display different images with varying seed values and projections.
 
+## Screenshot
+<div>
+  <img src="images/screenshot1.png" alt="Gambar 1" width="400" style="margin-right: 20px">
+  <img src="images/screenshot2.png" alt="Gambar 2" width="400">
+</div>
+
 ## Additional Notes
 
 - Each combination of seed and projection will produce a unique image.
@@ -57,6 +62,3 @@ python samilartgui.py
 
 - Enjoy exploring the creative possibilities with SamilaRT!
 
-## Screenshot
-![SamilaRT GUI](images/screenshot1.png)
-![SamilaRT GUI](images/screenshot2.png)
