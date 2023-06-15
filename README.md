@@ -1,59 +1,61 @@
-# SamilaRT - GUI
+# SamilaRT-GUI
 
-This repository contains code for a graphical user interface (GUI) implementation of the SamilaRT project. SamilaRT is a generative image visualization tool that uses mathematical functions to create unique and visually interesting images.
+This repository contains a graphical user interface (GUI) program called SamilaRT. SamilaRT generates and plots generative images based on mathematical functions using the Kivy framework.
 
-## Getting Started
+## Installation
 
-1. Clone this repository to your local machine or download the source code as a ZIP file.
+To use the SamilaRT-GUI program, follow these steps:
 
-2. Navigate to the directory where the code is located.
+```
+git clone https://github.com/gerryauditya6/SamilaRT-GUI.git
+```
 
-3. Install the required packages using the following command:
+Make sure you have Python 3.x installed on your system.    
+Install the required dependencies by running the following command:
+```
+pip install -r requirements.txt
+```
 
-  ```shell
-  pip install -r requirements.txt
-  ```
 
-4. Open a terminal or command prompt in that directory.
+## Usage
 
-5. Run the Python file using the following command:
-
+To run the SamilaRT-GUI program, navigate to the cloned repository's directory and execute the following command:
 ```
 python samilartgui.py
 ```
 
+This will launch the SamilaRT-GUI application.
 
-6. The GUI window will appear, featuring a label, an image widget, a text input, a spinner, and a "Generate and Plot" button.
+## Instructions
 
-7. Enter a seed value in the text input or leave it empty to use a random seed.
+To generate and plot a generative image using the SamilaRT-GUI program, follow these steps:
 
-8. Select a projection from the spinner. Choose from the available options: Rectilinear, Polar, Aitoff, Hammer, Lambert, and Mollweide.
+1. Enter a seed value in the seed input field. If left empty, a random seed will be used.
 
-9. Click the "Generate and Plot" button.
+2. Select a projection type from the projection spinner. The available options are Rectilinear, Polar, Aitoff, Hammer, Lambert, and Mollweide.
 
-10. The code will generate two generative images based on the selected seed and projection. The images will be plotted and saved to a file.
+3. Click the "Generate and Plot" button.
 
-11. The image widget will update to display the generated image.
+5. Once the image generation is complete, the generated image will be displayed in the image area.
 
-12. Repeat steps 5 to 9 to generate and display different images with varying seed values and projections.
+6. The generated image will be saved in the "Output" folder within the repository. The folder name will be a unique identifier.
+
+7. You can find the configuration details of each generated image in the respective image folder within the "Output" folder.
+
+8. To generate and plot a new image, repeat steps 1 to 7.
+
+Note: The program uses mathematical functions to generate the images. The specific functions used can be found in the code (main.py) under the f1, f2, f3, and f4 functions.
+
+## Configuration
+
+The program allows you to configure the following settings:
+
+- Seed: The seed value determines the randomization used in generating the images. You can enter a specific seed or leave it empty for a random seed.
+
+- Projection: The projection type defines how the generated image is mapped onto a two-dimensional plane. You can select one of the available projection options: Rectilinear, Polar, Aitoff, Hammer, Lambert, or Mollweide.
 
 ## Screenshot
 <div>
   <img src="images/screenshot1.png" alt="Gambar 1" width="400" style="margin-right: 20px">
   <img src="images/screenshot2.png" alt="Gambar 2" width="400">
 </div>
-
-## Additional Notes
-
-- Each combination of seed and projection will produce a unique image.
-
-- The code utilizes mathematical functions to generate the images.
-
-- Experiment with different seeds and projections to create visually interesting images.
-
-- The generated images can be saved to files for further use or analysis.
-
-- Feel free to modify the code and explore different functionalities of the SamilaRT tool.
-
-- Enjoy exploring the creative possibilities with SamilaRT!
-
