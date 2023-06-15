@@ -12,6 +12,7 @@ from samila import GenerativeImage, Projection
 import random
 import math
 import uuid
+import os
 
 class MyApp(App):
     def build(self):
@@ -85,7 +86,18 @@ class MyApp(App):
         print("\033[1;32mUsing seed =", seed, "\033[0m")
         print("\033[1;32mUsing projection =", projection, "\033[0m")
 
+        output_folder = "Output"
+        os.makedirs(output_folder, exist_ok=True)
+
         filename = str(uuid.uuid4())
+        folder_name = os.path.join("Output", filename)
+        os.makedirs(folder_name, exist_ok=True)
+
+        config_file_path = os.path.join(folder_name, f"{filename}_config.txt")
+        with open(config_file_path, "w") as config_file:
+            config_file.write(f"Seed: {seed}\n")
+            config_file.write(f"Projection: {self.projection_spinner.text}\n")
+
         gradient = ['Accent', 'Accent_r', 'Blues', 'Blues_r', 'BrBG', 'BrBG_r', 'BuGn', 'BuGn_r', 'BuPu', 'BuPu_r',
                     'CMRmap', 'CMRmap_r', 'Dark2', 'Dark2_r', 'GnBu', 'GnBu_r', 'Greens', 'Greens_r', 'Greys',
                     'Greys_r', 'OrRd', 'OrRd_r', 'Oranges', 'Oranges_r', 'PRGn', 'PRGn_r', 'Paired', 'Paired_r',
@@ -95,16 +107,17 @@ class MyApp(App):
                     'Set1_r', 'Set2', 'Set2_r', 'Set3', 'Set3_r', 'Spectral', 'Spectral_r', 'Wistia', 'Wistia_r']
 
         def f1(x, y):
-            return random.uniform(-1, 1) * y * x + math.cos(x ** 2) + random.gauss(0, 1)
-
+            result = random.uniform(-1,1) * x**3  - math.sin(y**2) + abs(y-x)
+            return result
         def f2(x, y):
-            return random.uniform(-1, 1) * y * x + math.cos(x ** 2) + random.gauss(0, 1) + math.sin(x * y) + 2 ** random.gauss(0, 5)
-
+            result = random.uniform(-1,1) * y**3 - math.cos(x**2) + 9*x
+            return result
         def f3(x, y):
-            return random.uniform(-1, 1) * y * x + math.cos(x ** 2) + random.gauss(0, 1)
-
+            result = random.uniform(-1,1) * x**3  - math.sin(y**2) + abs(y-x)
+            return result
         def f4(x, y):
-            return random.uniform(-1, 1) * y * x + math.cos(x ** 2) + random.gauss(0, 1) + math.sin(x * y) + 2 ** random.gauss(0, 5)
+            result = random.uniform(-1,1) * y**3 - math.cos(x**2) + 9*x
+            return result
 
         g1 = GenerativeImage(f1, f2)
         g2 = GenerativeImage(f3, f4)
@@ -130,11 +143,17 @@ class MyApp(App):
             s=0.06
         )
 
-        g1.save_image(file_adr=f"{filename}.png", depth=5)
-
+        g1.save_image(file_adr=os.path.join(folder_name, f"{filename}.png"), depth=2)
+        
         Clock.schedule_once(lambda _: self.update_image_widget(f"{filename}.png"))
 
     def update_image_widget(self, image_path):
+        folder_name = "Output"
+        image_folder = os.path.splitext(image_path)[0]
+        image_folder = os.path.join(folder_name, image_folder)
+        image_path = os.path.join(image_folder, image_path)
+        image_path = image_path.replace("\\", "/")
+        image_path = os.path.abspath(image_path)
         self.image_widget.source = image_path
         Clock.schedule_once(lambda _: self.enable_button(), 1)
 
