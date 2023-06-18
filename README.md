@@ -1,6 +1,7 @@
 # SamilaRT-GUI
 
-This repository contains a graphical user interface (GUI) program called SamilaRT. SamilaRT generates and plots generative images based on mathematical functions using the Kivy framework.
+This repository contains a graphical user interface (GUI) program called [SamilaRT](https://github.com/gerryauditya6/SamilaRT).     
+SamilaRT generates and plots generative images based on mathematical functions using the Kivy framework.
 
 ## Installation
 
