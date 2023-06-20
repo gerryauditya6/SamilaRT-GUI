@@ -60,4 +60,5 @@ The program allows you to configure the following settings:
   <img src="images/screenshot1.png" alt="Gambar 1" width="400" style="margin-right: 20px">
   <img src="images/screenshot2.png" alt="Gambar 2" width="400">
 </div>
-Visit my [OpenSea](https://opensea.io/Particleverse/collected) for more example.
+
+Visit my [OpenSea](https://opensea.io/Particleverse) for more example.
